@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1e18">
+  <meta name="description" content="سامانه یکپارچه قالب‌زنی چندعکسی، چیدمان دلخواه و قاب هوشمند GINP">
+  <title>سامانه یکپارچه قالب زنی سازمان تبلیغات حزب</title>
+  <style>
+    :root{--bg:#081410;--panel:#10231c;--panel2:#163027;--line:#355347;--fg:#edf4ee;--dim:#a8bab1;--gold:#e3c383;--mint:#8fdbc0;--danger:#f6b8a6}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 90% 0,#174132 0,transparent 35%),linear-gradient(140deg,#091811,#07120f 60%,#0b1914);color:var(--fg);font-family:Tahoma,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+    .container{max-width:1460px;margin:auto}header{border-bottom:1px solid #385748;background:#0a1914c9;backdrop-filter:blur(14px)}.head{display:flex;align-items:center;gap:14px;padding:19px 23px}.brand{width:54px;height:54px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(140deg,#3b664c,#102b20);border:1px solid #5b8a6c;color:var(--gold);font-size:29px}.head h1{font-size:clamp(16px,2vw,22px);margin:0 0 7px;line-height:1.5}.head p{font-size:12px;margin:0;color:var(--gold)}.version{margin-right:auto;color:#a6ccb4;font-size:11px;border:1px solid #406953;border-radius:99px;padding:7px 12px;white-space:nowrap}
+    main{display:grid;grid-template-columns:minmax(315px,425px) minmax(300px,1fr);align-items:start;gap:17px;padding:18px}.stack{display:grid;gap:14px}.panel{background:linear-gradient(150deg,var(--panel),var(--panel2));border:1px solid #2e4c3e;border-radius:20px;box-shadow:0 17px 37px #0004;overflow:hidden}.in{padding:17px}.h{display:flex;align-items:center;gap:9px;margin:0 0 13px;font-size:15px;font-weight:700}.num{width:25px;height:25px;border-radius:7px;background:#463d28;color:var(--gold);border:1px solid #78633c;display:grid;place-items:center;font-size:12px}.muted{color:var(--dim);font-size:11px;line-height:1.85;margin:10px 0 0}.drop{display:flex;align-items:center;gap:12px;padding:17px;min-height:98px;border:1px dashed #648375;border-radius:14px;cursor:pointer;background:#17342a}.drop:hover,.drop.dragover{border-color:var(--gold);background:#21483a}.drop span{display:block}.drop strong{font-size:13px}.drop .hint{font-size:11px;margin-top:6px;color:var(--dim);overflow-wrap:anywhere}.upload-icon{font-size:27px;width:43px;height:43px;display:grid!important;place-items:center;background:#294d3e;border-radius:12px;color:var(--gold);flex-shrink:0}.hidden{display:none!important}
+    .sizes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.chip{border:1px solid #405d4b;background:#173027;color:#e8f0e9;border-radius:12px;min-height:46px;padding:9px 11px;text-align:center}.chip.active{border-color:var(--gold);background:#39472d;color:#fff3d4;box-shadow:inset 0 0 0 1px #d9bd7a44}.chip small{display:block;color:#b7c7bd;font-size:10px;margin-top:3px}.chip.auto{grid-column:span 2}.size-fields{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.field label{display:block;font-size:11px;color:#cdded3;margin-bottom:6px}.field input{width:100%;border:1px solid #446353;border-radius:10px;background:#091a14;color:#f9f6e9;padding:9px 10px;direction:ltr;text-align:center;font-variant-numeric:tabular-nums}.outline{border:1px solid #56705e;background:transparent;border-radius:11px;color:var(--fg);padding:9px 12px;font-size:12px}.wide{width:100%;margin-top:9px}.templates{display:flex;gap:9px;overflow-x:auto;padding:3px 0 8px;scrollbar-width:thin}.template{position:relative;flex:0 0 104px;height:112px;background:#122c21;border:1px solid #41574d;border-radius:12px;color:var(--fg);padding:7px;cursor:pointer;text-align:center}.template.selected{border-color:var(--gold);background:#324736}.template img{height:74px;max-width:86px;object-fit:contain;display:block;margin:auto}.template .caption{display:block;margin-top:6px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.template .remove{position:absolute;top:1px;left:2px;background:#67332c;color:white;border:0;border-radius:50%;width:22px;height:22px;cursor:pointer}
+    .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}.row label,.row .label{font-size:12px;color:#d1e0d5}.row output{font-size:12px;color:var(--gold)}input[type=range]{accent-color:var(--gold);width:100%;margin:8px 0 0}.toggle-row{display:flex;gap:7px;flex-wrap:wrap}.toggle{border:1px solid #54715f;background:#142b22;color:#e9f3e9;padding:9px;border-radius:10px;font-size:11px;min-height:39px}.toggle.active{background:var(--gold);border-color:#ffdfa2;color:#25251b}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.btn{border:1px solid #476453;border-radius:11px;padding:10px 15px;background:#1c392c;color:var(--fg);font-size:12px;font-weight:700}.btn.primary{background:var(--gold);color:#20271e;border-color:#e9d8a3}.btn.danger{color:var(--danger);border-color:#77463d}.btn:disabled{opacity:.45;cursor:not-allowed}
+    .view{position:sticky;top:14px}.view-head{display:flex;gap:15px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:14px}.view-head strong{font-size:15px}.view-head .meta{font-size:12px;color:var(--dim);margin-top:7px}.status{font-size:11px;color:#9ad7a7;white-space:nowrap}.preview{min-height:450px;background:radial-gradient(circle,#1d4435 0,#10251c 70%);position:relative;display:flex;justify-content:center;align-items:center;margin-top:15px;padding:20px;border:1px solid #3b5948;border-radius:16px;overflow:hidden}.preview:before{content:"";position:absolute;inset:0;opacity:.17;background-size:24px 24px;background-image:linear-gradient(45deg,#e2ebde 25%,transparent 25%),linear-gradient(-45deg,#e2ebde 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e2ebde 75%),linear-gradient(-45deg,transparent 75%,#e2ebde 75%);background-position:0 0,0 12px,12px -12px,-12px 0;pointer-events:none}canvas{display:block;max-width:100%;max-height:67vh;width:auto;height:auto;position:relative;filter:drop-shadow(0 10px 24px #0007);background:transparent}.download-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:13px}.download-row .label{font-size:11px;color:var(--dim);line-height:1.6}.footnote{text-align:center;color:#89a294;font-size:11px;padding:5px 20px 30px}.toast{position:fixed;left:18px;bottom:18px;z-index:3;background:#f5e2ba;color:#14261c;padding:12px 16px;max-width:min(380px,90vw);border-radius:10px;box-shadow:0 8px 30px #0009;transform:translateY(120px);opacity:0;transition:transform .2s,opacity .2s}.toast.show{transform:translateY(0);opacity:1}
+    @media(max-width:1030px){main{grid-template-columns:1fr}.view{position:static;order:-1}.preview{min-height:340px}canvas{max-height:55vh}}@media(max-width:580px){.head{padding:13px}.head h1{font-size:15px}.version{display:none}main{padding:11px;gap:12px}.in{padding:13px}.preview{min-height:270px;padding:8px}canvas{max-height:43svh}.download-row{align-items:stretch;flex-direction:column}.download-row .btn{min-height:48px}}
+
+    /* Multi-photo arranger */
+    .photo-list{display:grid;gap:8px;margin-top:10px;max-height:350px;overflow:auto;scrollbar-width:thin}
+    .photo-item{display:flex;gap:9px;align-items:center;padding:7px;border-radius:11px;background:#0d261c;border:1px solid #345747;min-height:66px;cursor:grab}
+    .photo-item.dragging{opacity:.45}.photo-item.dragtarget{border-color:var(--gold);background:#2c3b2d}
+    .photo-item img{width:52px;height:50px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #43634f}
+    .photo-text{flex:1;min-width:0;overflow:hidden}.photo-name{display:block;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .photo-size{display:block;font-size:10px;color:var(--dim);margin-top:5px;direction:ltr;text-align:right}
+    .photo-tools{display:flex;align-items:center;gap:3px;flex-shrink:0}
+    .photo-tools button{border:1px solid #4a6857;color:#efe7c9;background:#22372a;padding:0;width:26px;height:30px;border-radius:7px;font-size:14px}
+    .photo-tools button.remove-one{color:#ffd1c4;border-color:#835046;background:#402520}
+    .layout-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .layout-opt{display:flex;gap:7px;align-items:center;justify-content:center;min-height:44px;text-align:center;border:1px solid #496553;border-radius:11px;color:var(--fg);background:#173126;padding:8px;font-size:11px}
+    .layout-opt.active{border-color:var(--gold);background:#364834;color:#fff0c8}
+    .layout-drawing{font-size:20px;line-height:1;color:var(--gold);min-width:22px}
+    .layout-opt[data-layout="auto"]{grid-column:span 2}
+    @media(max-width:360px){.layout-options{grid-template-columns:1fr}.layout-opt[data-layout="auto"]{grid-column:span 1}}
+
+    /* Prominent creator signature, readable on both phones and desktops. */
+    .head .maker-credit{font-size:clamp(18px,2vw,27px);font-weight:900;line-height:1.7;color:#f7d991;
+      text-shadow:0 2px 18px rgba(231,186,91,.28);margin:5px 0 1px;letter-spacing:.1px}
+    .maker-footer{display:inline-block;padding:12px 20px;color:#f7d991;font-weight:900;
+      font-size:clamp(17px,2vw,25px);line-height:1.8;border:1px solid #604d29;
+      border-radius:14px;background:linear-gradient(100deg,#12251b,#233a29,#12251b)}
+    .footnote{padding-top:12px}
+    @media(max-width:580px){.head .maker-credit{font-size:17px}.maker-footer{font-size:17px;padding:10px 12px}
+      .head{align-items:flex-start}.brand{width:42px;height:42px;flex-shrink:0}}
+    @media(max-width:340px){.head .maker-credit{font-size:15px}}
+  </style>
+</head>
+<body>
+<header><div class="head container"><div class="brand" aria-hidden="true">▧</div><div><h1>سامانه یکپارچه قالب زنی سازمان تبلیغات حزب</h1><p class="maker-credit">⚔️ محصولی از تحقیق و توسعه میلیتاریسم بزرگ ⚔️</p></div><span class="version">نسخه ۴ · قاب‌زنی و چیدمان چندعکسی</span></div></header>
+<main class="container">
+  <section class="stack" aria-label="تنظیمات قاب">
+    <div class="panel"><div class="in"><div class="h"><span class="num">۱</span> افزودن و مرتب‌کردن عکس‌ها</div>
+      <label class="drop" id="photoDrop"><span class="upload-icon">＋</span><span><strong>افزودن یک یا چند عکس</strong><span id="photoInfo" class="hint">چند عکس را هم‌زمان انتخاب کنید یا در اینجا رها کنید</span></span><input class="hidden" id="photoInput" type="file" accept="image/*" multiple></label>
+      <div id="photoList" class="photo-list" aria-live="polite"></div>
+      <p class="muted">ترتیب نمایش را با دکمه‌های ↑ و ↓ یا کشیدن تصاویر عوض کنید. هیچ تصویری زیر قاب پنهان نمی‌شود.</p>
+      <button class="btn danger" id="removePhoto" type="button" style="margin-top:10px">حذف همه عکس‌ها</button>
+    </div></div>
+    <div class="panel"><div class="in"><div class="h"><span class="num">۲</span> آرایش و چیدمان عکس‌ها</div>
+      <div class="layout-options" id="layoutOptions">
+        <button class="layout-opt active" data-layout="auto" type="button"><span class="layout-drawing" aria-hidden="true">✦</span>چیدمان خودکار</button>
+        <button class="layout-opt" data-layout="row" type="button"><span class="layout-drawing" aria-hidden="true">▥</span>همه کنار هم</button>
+        <button class="layout-opt" data-layout="column" type="button"><span class="layout-drawing" aria-hidden="true">☷</span>همه زیر هم</button>
+        <button class="layout-opt" data-layout="two-one" type="button"><span class="layout-drawing" aria-hidden="true">▤</span>دو بالا + یکی وسط پایین</button>
+        <button class="layout-opt" data-layout="one-two" type="button"><span class="layout-drawing" aria-hidden="true">▧</span>یکی بالا + دو پایین</button>
+        <button class="layout-opt" data-layout="grid2" type="button"><span class="layout-drawing" aria-hidden="true">▦</span>شبکه دو ستونی</button>
+        <button class="layout-opt" data-layout="grid3" type="button"><span class="layout-drawing" aria-hidden="true">▦</span>شبکه سه ستونی</button>
+      </div>
+      <div class="row"><label for="gap">فاصله بین عکس‌ها</label><output id="gapLabel">۱٫۵٪</output></div>
+      <input id="gap" type="range" min="0" max="5" step="0.5" value="1.5">
+      <p class="muted" id="layoutHint">با سه عکس، دو تصویر بالا و تصویر سوم در وسط پایین قرار می‌گیرد؛ چیدمان را می‌توان تغییر داد.</p>
+    </div></div>
+    <div class="panel"><div class="in"><div class="h"><span class="num">۳</span> نسبت و ابعاد خروجی</div>
+      <div id="sizes" class="sizes">
+        <button class="chip auto active" data-mode="auto" type="button">✨ اندازه هوشمند متناسب با ترکیب<small>بدون برش؛ متناسب با چیدمان عکس‌ها</small></button>
+        <button class="chip" data-mode="vertical" type="button">عمودی<small>۱۰۸۰ × ۱۹۲۰</small></button>
+        <button class="chip" data-mode="square" type="button">مربعی<small>۱۰۸۰ × ۱۰۸۰</small></button>
+        <button class="chip" data-mode="post" type="button">افقی ۴:۳<small>۱۴۴۰ × ۱۰۸۰</small></button>
+        <button class="chip" data-mode="horizontal" type="button">افقی ۱۶:۹<small>۱۹۲۰ × ۱۰۸۰</small></button>
+        <button class="chip" data-mode="custom" type="button">اندازه دلخواه<small>واردکردن عرض و ارتفاع</small></button>
+      </div>
+      <div id="manualFields" class="hidden"><div class="size-fields"><div class="field"><label for="manualWidth">عرض قاب (پیکسل)</label><input id="manualWidth" type="number" min="200" max="8192" value="1960" inputmode="numeric"></div><div class="field"><label for="manualHeight">ارتفاع قاب (پیکسل)</label><input id="manualHeight" type="number" min="200" max="8192" value="1050" inputmode="numeric"></div></div><button id="applySize" class="outline wide" type="button">اعمال ابعاد دلخواه</button></div>
+      <p id="ratioHint" class="muted">ابعاد تصویر آپلودشده خودکار شناسایی خواهد شد.</p>
+    </div></div>
+    <div class="panel"><div class="in"><div class="h"><span class="num">۴</span> انتخاب فریم</div>
+      <div id="frames" class="templates"></div>
+      <label class="drop" id="frameDrop" style="min-height:72px;margin-top:10px;padding:11px"><span class="upload-icon" style="width:36px;height:36px;font-size:21px">＋</span><span><strong>افزودن فریم اختصاصی</strong><span class="hint">فایل PNG با مرکز شفاف؛ ذخیره در مرورگر</span></span><input class="hidden" id="frameInput" type="file" accept="image/png,image/webp"></label>
+      <p class="muted">قاب ظریف دور کل مجموعه قرار می‌گیرد؛ نه دور تک‌تک عکس‌ها. لوگو و تزئینات متناسب نگه داشته می‌شوند.</p>
+    </div></div>
+    <div class="panel"><div class="in"><div class="h"><span class="num">۵</span> تنظیمات نهایی</div>
+      <div class="row"><label for="thickness">ضخامت قاب</label><output id="thicknessLabel">۴٫۵٪</output></div><input id="thickness" type="range" min="2" max="9" step="0.5" value="4.5">
+      <div class="row"><span class="label">نمایش عکس در اندازه‌های متفاوت</span></div>
+      <div class="toggle-row"><button class="toggle active" id="fitContain" type="button">نمایش کامل تصاویر (پیشنهادی)</button><button class="toggle" id="fitCover" type="button">پرکردن خانه‌ها با برش</button></div>
+      <p class="muted">در حالت پیش‌فرض همه عکس‌ها کاملاً دیده می‌شوند؛ فضای اضافی با زمینه محو از همان عکس پر می‌شود. «پرکردن با برش» اختیاری است.</p>
+      <div class="actions"><button class="btn" id="reset" type="button">بازنشانی تنظیمات</button></div>
+    </div></div>
+  </section>
+  <section class="panel view" aria-label="پیش‌نمایش خروجی"><div class="in">
+    <div class="view-head"><div><strong>پیش‌نمایش زنده</strong><div id="sizeInfo" class="meta">هنوز عکسی انتخاب نشده است</div></div><div class="status">● آماده</div></div>
+    <div class="preview"><canvas id="preview" width="900" height="1000" aria-label="پیش‌نمایش قاب عکس"></canvas></div>
+    <div class="download-row"><span id="exportInfo" class="label">PNG با کیفیت بالا · پردازش کاملاً محلی و بدون آپلود سرور</span><button id="download" class="btn primary" type="button" disabled>دریافت خروجی PNG</button></div>
+  </div></section>
+</main>
+<div class="footnote container"><strong class="maker-footer">⚔️ محصولی از تحقیق و توسعه میلیتاریسم بزرگ ⚔️</strong></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),canvas=$('preview');
+const presets={vertical:[1080,1920],square:[1080,1080],post:[1440,1080],horizontal:[1920,1080]};
+const mainFrame={id:'adaptive',name:'قاب اصلی هوشمند',src:'./assets/frame-adaptive.png'};
+const sourceExtras=[
+  {id:'legacy-vertical',name:'قاب کلاسیک عمودی',src:'./assets/frame-vertical.png'},
+  {id:'legacy-square',name:'قاب کلاسیک مربعی',src:'./assets/frame-square.png'},
+  {id:'legacy-post',name:'قاب کلاسیک ۴:۳',src:'./assets/frame-43.png'},
+  {id:'legacy-horizontal',name:'قاب کلاسیک ۱۶:۹',src:'./assets/frame-169.png'}
+];
+const state={photos:[],composition:'auto',gap:1.5,mode:'auto',custom:[1960,1050],frameId:'adaptive',thickness:4.5,fit:'contain',frames:[mainFrame,{id:'none',name:'بدون قاب'}],prepared:new Map(),db:null};
+const fmt=n=>Math.round(n).toLocaleString('fa-IR');
+let toastTimer=null,scheduled=false,draggedId=null;
+function toast(message){const t=$('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}
+function imgLoad(src){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('خطا در بازکردن تصویر'));im.src=src})}
+function imgDims(im){return [im.naturalWidth||im.width,im.naturalHeight||im.height]}
+function imgRatio(p){const [w,h]=imgDims(p.im);return w/h}
+function median(a){const s=[...a].sort((x,y)=>x-y);return s.length?s[Math.floor(s.length/2)]:1}
+function largestRun(a){let start=-1,best=[0,-1];for(let i=0;i<=a.length;i++){if(i<a.length&&a[i]){if(start<0)start=i}else if(start>=0){if(i-start>best[1]-best[0]+1)best=[start,i-1];start=-1}}return best}
+function inspectFrame(im){
+  const [w,h]=imgDims(im),c=document.createElement('canvas');c.width=w;c.height=h;
+  const g=c.getContext('2d',{willReadFrequently:true});g.drawImage(im,0,0);
+  const d=g.getImageData(0,0,w,h).data,trans=(x,y)=>d[(Math.trunc(y)*w+Math.trunc(x))*4+3]<35;
+  const xmid=largestRun(Array.from({length:w},(_,x)=>trans(x,Math.floor(h/2))));
+  const ymid=largestRun(Array.from({length:h},(_,y)=>trans(Math.floor(w/2),y)));
+  if(xmid[1]-xmid[0]<w*.35||ymid[1]-ymid[0]<h*.35)throw new Error('مرکز فریم باید شفاف باشد (PNG)');
+  return {im,w,h,x0:Math.max(1,xmid[0]+2),x1:Math.min(w-1,xmid[1]-1),y0:Math.max(1,ymid[0]+2),y1:Math.min(h-1,ymid[1]-1)};
+}
+async function prepareFrame(f){if(f.id==='none'||state.prepared.has(f.id))return;const im=await imgLoad(f.src||f.preview);state.prepared.set(f.id,inspectFrame(im))}
+function getFrame(){return state.prepared.get(state.frameId)||null}
+async function loadExtras(){for(const f of sourceExtras){try{await prepareFrame(f);state.frames.splice(state.frames.length-1,0,f);renderFrames()}catch{/* optional old asset */}}}
+function renderFrames(){const root=$('frames');root.replaceChildren();for(const f of state.frames){
+  const b=document.createElement('button');b.className='template'+(state.frameId===f.id?' selected':'');b.type='button';b.title=f.name;
+  if(f.id==='none'){const n=document.createElement('div');n.style='height:74px;display:grid;place-items:center;font-size:30px;color:#cbd7cd';n.textContent='□';b.append(n)}
+  else{const im=new Image();im.src=f.src||f.preview;im.alt='';b.append(im)}
+  const c=document.createElement('span');c.className='caption';c.textContent=f.name;b.append(c);
+  b.addEventListener('click',()=>{state.frameId=f.id;renderFrames();schedule()});
+  if(f.blob){const del=document.createElement('span');del.className='remove';del.title='حذف فریم';del.textContent='×';del.addEventListener('click',async e=>{e.stopPropagation();if(!confirm('این فریم حذف شود؟'))return;await dbDelete(f.id).catch(()=>{});state.frames=state.frames.filter(x=>x.id!==f.id);state.prepared.delete(f.id);URL.revokeObjectURL(f.preview);if(state.frameId===f.id)state.frameId='adaptive';renderFrames();schedule()});b.append(del)}
+  root.append(b);
+}}
+function selectedLayout(){if(state.composition!=='auto')return state.composition;return state.photos.length<=1?'single':state.photos.length===2?'row':state.photos.length===3?'two-one':'grid2'}
+function setComposition(value){state.composition=value;document.querySelectorAll('[data-layout]').forEach(b=>b.classList.toggle('active',b.dataset.layout===value));schedule()}
+function setMode(value){state.mode=value;document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===value));$('manualFields').classList.toggle('hidden',value!=='custom');schedule()}
+function safeSize(w,h){if(!Number.isFinite(w)||!Number.isFinite(h)||w<200||h<200||w>8192||h>8192||w*h>28000000)throw new Error('هر بُعد باید بین ۲۰۰ تا ۸۱۹۲ و حاصل کمتر از ۲۸ میلیون پیکسل باشد');return [Math.round(w),Math.round(h)]}
+function reorderPhoto(id,step){const from=state.photos.findIndex(x=>x.id===id),to=from+step;if(from<0||to<0||to>=state.photos.length)return;const [item]=state.photos.splice(from,1);state.photos.splice(to,0,item);renderPhotos();schedule()}
+function movePhoto(dragId,targetId){if(!dragId||dragId===targetId)return;const a=state.photos.findIndex(p=>p.id===dragId),b=state.photos.findIndex(p=>p.id===targetId);if(a<0||b<0)return;const [item]=state.photos.splice(a,1);state.photos.splice(b,0,item);renderPhotos();schedule()}
+function removeOne(id){const i=state.photos.findIndex(p=>p.id===id);if(i<0)return;URL.revokeObjectURL(state.photos[i].url);state.photos.splice(i,1);renderPhotos();schedule()}
+function clearPhotos(){for(const p of state.photos)URL.revokeObjectURL(p.url);state.photos=[];renderPhotos();schedule()}
+function renderPhotos(){const root=$('photoList');root.replaceChildren();$('photoInfo').textContent=state.photos.length?`${fmt(state.photos.length)} عکس انتخاب شده · می‌توانید بیشتر اضافه کنید`:'چند عکس را هم‌زمان انتخاب کنید یا در اینجا رها کنید';
+  state.photos.forEach((p,i)=>{const el=document.createElement('div');el.className='photo-item';el.draggable=true;el.dataset.id=p.id;
+    const im=document.createElement('img');im.src=p.url;im.alt='بندانگشتی تصویر';
+    const info=document.createElement('div');info.className='photo-text';const nm=document.createElement('span');nm.className='photo-name';nm.textContent=`${fmt(i+1)}. ${p.name}`;
+    const d=document.createElement('span');d.className='photo-size';const [w,h]=imgDims(p.im);d.textContent=`${w} × ${h}`;info.append(nm,d);
+    const buttons=document.createElement('div');buttons.className='photo-tools';
+    for(const [txt,step,title] of [['↑',-1,'انتقال به ابتدای ترتیب'],['↓',1,'انتقال به انتهای ترتیب']]){const btn=document.createElement('button');btn.type='button';btn.textContent=txt;btn.title=title;btn.disabled=(step<0&&i===0)||(step>0&&i===state.photos.length-1);btn.onclick=()=>reorderPhoto(p.id,step);buttons.append(btn)}
+    const del=document.createElement('button');del.type='button';del.textContent='×';del.title='حذف عکس';del.className='remove-one';del.onclick=()=>removeOne(p.id);buttons.append(del);
+    el.append(im,info,buttons);
+    el.addEventListener('dragstart',e=>{draggedId=p.id;el.classList.add('dragging');e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',p.id)});
+    el.addEventListener('dragend',()=>{draggedId=null;document.querySelectorAll('.photo-item').forEach(x=>x.classList.remove('dragging','dragtarget'))});
+    el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('dragtarget')});
+    el.addEventListener('dragleave',()=>el.classList.remove('dragtarget'));
+    el.addEventListener('drop',e=>{e.preventDefault();e.stopPropagation();el.classList.remove('dragtarget');movePhoto(draggedId||e.dataTransfer.getData('text/plain'),p.id)});
+    root.append(el);
+  });
+}
+// Virtual collage coordinates. Row/column layouts use source aspect ratios; images are never cropped.
+// The bottom of a two-on-top layout is centered, with a photographic blurred background at the sides.
+function collageSpec(){const photos=state.photos;if(!photos.length)return {W:1200,H:900,rects:[]};const n=photos.length,type=selectedLayout();
+  if(n===1||type==='single'){const [w,h]=imgDims(photos[0].im);return {W:w,H:h,rects:[{idx:0,x:0,y:0,w,h}]}}
+  const gap=22,ratio=i=>imgRatio(photos[i]),rects=[];
+  if(type==='row'){const h=850;let x=0;photos.forEach((_,i)=>{const w=h*ratio(i);rects.push({idx:i,x,y:0,w,h});x+=w+gap});return {W:x-gap,H:h,rects}}
+  if(type==='column'){const w=1300;let y=0;photos.forEach((_,i)=>{const h=w/ratio(i);rects.push({idx:i,x:0,y,w,h});y+=h+gap});return {W:w,H:y-gap,rects}}
+  let groups=[];
+  if(type==='two-one'&&n>=3)groups=[[0,1],[2]];
+  else if(type==='one-two'&&n>=3)groups=[[0],[1,2]];
+  let start=groups.flat().length,cols=(type==='grid3'?3:2);
+  while(start<n){const ar=[];for(let j=0;j<cols&&start<n;j++,start++)ar.push(start);groups.push(ar)}
+  if(!groups.length)groups=[photos.map((_,i)=>i)];
+  const W=1700;let y=0;const regular=groups.find(g=>g.length>1),refRat=regular?regular.reduce((v,i)=>v+ratio(i),0):2;
+  const regularH=(W-gap*Math.max(0,(regular?.length||2)-1))/refRat;
+  for(let r=0;r<groups.length;r++){
+    const group=groups[r];let h,x;
+    const centered=(group.length===1&&n>1&&(type==='two-one'||type==='one-two'));
+    if(centered){h=Math.max(300,regularH*.85);const w=Math.min(W,ratio(group[0])*h);x=(W-w)/2;rects.push({idx:group[0],x,y,w,h});}
+    else if(group.length===1){h=Math.min(regularH*1.3,W/ratio(group[0]));const w=Math.min(W,h*ratio(group[0]));x=(W-w)/2;rects.push({idx:group[0],x,y,w,h})}
+    else{h=(W-gap*(group.length-1))/group.reduce((v,i)=>v+ratio(i),0);x=0;for(const i of group){const w=h*ratio(i);rects.push({idx:i,x,y,w,h});x+=w+gap}}
+    y+=h+gap;
+  }
+  return {W,H:y-gap,rects};
+}
+// Automatic canvas grows OUTWARD from the complete collage; fixed sizes keep collage fully visible.
+function geometry(spec){const frame=getFrame();let [W,H]=[spec.W,spec.H],s=1,inner;
+  if(!frame){if(state.mode!=='auto'){[W,H]=state.mode==='custom'?state.custom:presets[state.mode]}else{const k=Math.min(1,7600/Math.max(W,H),Math.sqrt(27000000/(W*H)));W=Math.max(1,Math.round(W*k));H=Math.max(1,Math.round(H*k))}return {W,H,inner:{x:0,y:0,w:W,h:H},s:0}}
+  const a=frame.w-frame.x1+frame.x0,b=frame.h-frame.y1+frame.y0;
+  if(state.mode==='auto'){
+    s=state.thickness/100*Math.min(W,H)/Math.max(1,Math.min(frame.x0,frame.w-frame.x1));
+    const k=Math.min(1,7600/Math.max(W+a*s,H+b*s),Math.sqrt(27000000/((W+a*s)*(H+b*s))));
+    W=Math.max(1,Math.round(W*k));H=Math.max(1,Math.round(H*k));s*=k;
+    const x=Math.max(1,Math.round(frame.x0*s)),y=Math.max(1,Math.round(frame.y0*s));
+    return {W:Math.max(1,Math.round(W+a*s)),H:Math.max(1,Math.round(H+b*s)),inner:{x,y,w:W,h:H},s};
+  }
+  [W,H]=state.mode==='custom'?state.custom:presets[state.mode];
+  s=Math.min(state.thickness/100*Math.min(W,H)/Math.max(1,Math.min(frame.x0,frame.w-frame.x1)),W/(a+100),H/(b+100));
+  const x=Math.round(frame.x0*s),y=Math.round(frame.y0*s),right=Math.round((frame.w-frame.x1)*s),bottom=Math.round((frame.h-frame.y1)*s);
+  return {W,H,inner:{x,y,w:W-x-right,h:H-y-bottom},s};
+}
+function scaledGeometry(geo,k){return {...geo,W:Math.max(1,Math.round(geo.W*k)),H:Math.max(1,Math.round(geo.H*k)),s:geo.s*k,inner:{x:geo.inner.x*k,y:geo.inner.y*k,w:geo.inner.w*k,h:geo.inner.h*k}}}
+function frameSegments(meta,geo){const {w,h,x0,x1,y0,y1}=meta,{W,H,inner,s}=geo;
+  const sx=[0,Math.round(w*.325),Math.round(w*.362),Math.round(w*.638),Math.round(w*.675),w];
+  const badge=(sx[3]-sx[2])*s,left=sx[1]*s,right=(w-sx[4])*s,free=Math.max(0,(W-left-right-badge)/2);
+  const dx=[0,left,left+free,left+free+badge,W-right,W];
+  const midA=Math.max(y0+3,Math.round(h*.42)),midB=Math.min(y1-3,Math.round(h*.59));
+  const sy=[0,y0,midA,midB,y1,h],midH=(midB-midA)*s,upper=Math.max(0,(inner.h-midH)/2);
+  const dy=[0,inner.y,inner.y+upper,inner.y+upper+midH,inner.y+inner.h,H];return {sx,sy,dx,dy};
+}
+function drawFrame(g,meta,geo){const {sx,sy,dx,dy}=frameSegments(meta,geo);g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
+  for(let r=0;r<5;r++)for(let c=0;c<5;c++){if(r>0&&r<4&&c>0&&c<4)continue;
+    const sw=sx[c+1]-sx[c],sh=sy[r+1]-sy[r],dw=dx[c+1]-dx[c],dh=dy[r+1]-dy[r];
+    if(sw>0&&sh>0&&dw>0&&dh>0)g.drawImage(meta.im,sx[c],sy[r],sw,sh,dx[c],dy[r],dw,dh);
+  }
+}
+function drawImageInside(g,im,rect,fit='contain'){const {x,y,w,h}=rect;const [iw,ih]=imgDims(im);const cover=Math.max(w/iw,h/ih),contain=Math.min(w/iw,h/ih);
+  g.save();g.beginPath();g.rect(x,y,w,h);g.clip();
+  const at=k=>g.drawImage(im,x+(w-iw*k)/2,y+(h-ih*k)/2,iw*k,ih*k);
+  if(fit==='contain'&&Math.abs(w/h-iw/ih)>.0001){
+    g.save();g.filter=`blur(${Math.max(3,Math.round(Math.min(w,h)*.035))}px)`;at(cover*1.08);g.restore();
+    g.fillStyle='rgba(0,0,0,.12)';g.fillRect(x,y,w,h);at(contain);
+  }else at(fit==='cover'?cover:contain);
+  g.restore();
+}
+function drawComposition(g,geo,spec){const {inner}=geo;
+  g.save();g.beginPath();g.rect(inner.x,inner.y,inner.w,inner.h);g.clip();
+  if(!state.photos.length){g.fillStyle='#eee9e1';g.fillRect(inner.x,inner.y,inner.w,inner.h);g.fillStyle='#41624d';g.font=`${Math.max(13,inner.w*.035)}px Tahoma`;g.textAlign='center';g.textBaseline='middle';g.fillText('برای شروع چند عکس انتخاب کنید',inner.x+inner.w/2,inner.y+inner.h/2);g.restore();return}
+  // Entire area receives a color-consistent photographic backdrop, even for centered-row layouts.
+  g.save();g.filter=`blur(${Math.max(6,Math.round(Math.min(inner.w,inner.h)*.055))}px)`;drawImageInside(g,state.photos[0].im,inner,'cover');g.restore();
+  g.fillStyle='rgba(11,22,17,.55)';g.fillRect(inner.x,inner.y,inner.w,inner.h);
+  const k=Math.min(inner.w/spec.W,inner.h/spec.H),cw=spec.W*k,ch=spec.H*k,ox=inner.x+(inner.w-cw)/2,oy=inner.y+(inner.h-ch)/2;
+  // Centered last/first row has a blurred extension of its own picture, not empty margins.
+  const centeredId=selectedLayout()==='two-one'&&state.photos.length>=3?2:selectedLayout()==='one-two'&&state.photos.length>=3?0:-1;
+  if(centeredId>=0){const rr=spec.rects.find(r=>r.idx===centeredId);if(rr){const band={x:ox,y:oy+rr.y*k,w:cw,h:rr.h*k};
+    g.save();g.beginPath();g.rect(band.x,band.y,band.w,band.h);g.clip();g.filter=`blur(${Math.max(5,Math.round(Math.min(band.w,band.h)*.06))}px)`;
+    drawImageInside(g,state.photos[centeredId].im,band,'cover');g.restore();
+    g.fillStyle='rgba(11,22,17,.28)';g.fillRect(band.x,band.y,band.w,band.h);
+  }}
+  // If the output ratio is different, backdrop fills the unused margins, never with empty white pixels.
+  const separator=Math.max(0,Math.min(cw,ch)*state.gap/100);
+  for(const r of spec.rects){const cr={x:ox+r.x*k,y:oy+r.y*k,w:r.w*k,h:r.h*k};
+    const trim=separator/2;const tile={x:cr.x+trim,y:cr.y+trim,w:Math.max(1,cr.w-2*trim),h:Math.max(1,cr.h-2*trim)};
+    g.fillStyle='#263e32';g.fillRect(tile.x,tile.y,tile.w,tile.h);
+    drawImageInside(g,state.photos[r.idx].im,tile,state.fit);
+  }
+  g.restore();
+}
+function paint(target,geo,spec){target.width=Math.round(geo.W);target.height=Math.round(geo.H);const g=target.getContext('2d',{alpha:true});g.clearRect(0,0,geo.W,geo.H);
+  const meta=getFrame();if(meta){const backdrop=g.createLinearGradient(0,0,0,geo.H);backdrop.addColorStop(0,'#28090d');backdrop.addColorStop(.5,'#17070a');backdrop.addColorStop(1,'#33090c');g.fillStyle=backdrop;g.fillRect(0,0,geo.W,geo.H);drawFrame(g,meta,geo)}
+  drawComposition(g,geo,spec);
+}
+function draw(){const spec=collageSpec(),geo=geometry(spec);
+  const k=Math.min(1,1500/Math.max(geo.W,geo.H),Math.sqrt(1900000/(geo.W*geo.H)));
+  paint(canvas,scaledGeometry(geo,k),spec);
+  $('sizeInfo').textContent=`خروجی: ${fmt(geo.W)} × ${fmt(geo.H)} پیکسل · ${fmt(state.photos.length)} عکس · آرایش: ${selectedLayout()}`;
+  $('exportInfo').textContent='قاب دور همه تصاویر · عکس‌ها بدون برش در حالت پیشنهادی · PNG';
+  $('ratioHint').textContent=state.mode==='auto'?'اندازه خروجی مطابق نسبت کل چیدمان ساخته می‌شود.':state.mode==='custom'?'ابعاد خروجی مطابق عددهای دستی هستند؛ عکس‌ها کامل دیده می‌شوند.':'ترکیب کامل در اندازه استاندارد قرار می‌گیرد؛ اطراف آن با زمینه محو پر می‌شود.';
+  $('layoutHint').textContent=state.photos.length===3?'در حالت خودکار: دو عکس بالا و یک عکس در وسط پایین؛ چیدمان را تغییر دهید.':'چیدمان خودکار متناسب با تعداد عکس‌ها انتخاب می‌شود؛ ترتیب را از فهرست بالا تغییر دهید.';
+  $('download').disabled=!state.photos.length;
+}
+function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;try{draw()}catch(e){console.error(e);toast('اشکال در نمایش: '+e.message)}})}
+async function onPhotos(list){const files=Array.from(list||[]).filter(f=>f.type.startsWith('image/'));if(!files.length){toast('فایل تصویری انتخاب کنید');return}let n=0;
+  for(const file of files){if(state.photos.length>=30){toast('در هر ترکیب حداکثر ۳۰ تصویر پشتیبانی می‌شود');break}const url=URL.createObjectURL(file);
+    try{const im=await imgLoad(url);state.photos.push({id:`p${Date.now()}-${Math.random().toString(36).slice(2)}`,url,im,name:file.name});n++}catch{URL.revokeObjectURL(url)}
+  }
+  renderPhotos();schedule();toast(n?`${fmt(n)} تصویر اضافه شد`:'هیچ تصویری بارگذاری نشد');
+}
+async function onFrame(files){const file=files?.[0];if(!file)return;const url=URL.createObjectURL(file);
+  try{const im=await imgLoad(url),meta=inspectFrame(im);const f={id:'custom-'+Date.now(),name:file.name.replace(/\.[^.]+$/,'').slice(0,60),preview:url,blob:file};state.frames.splice(state.frames.length-1,0,f);state.prepared.set(f.id,meta);state.frameId=f.id;
+    await dbPut({id:f.id,name:f.name,blob:f.blob}).catch(()=>toast('فریم فقط تا پایان نشست ذخیره شد'));
+    renderFrames();schedule();toast('فریم جدید انتخاب شد')
+  }catch(e){URL.revokeObjectURL(url);toast(e.message)}
+}
+function bindDrop(boxId,inputId,handler){const box=$(boxId),input=$(inputId);input.addEventListener('change',()=>{handler(input.files);input.value=''});
+  box.addEventListener('dragover',e=>{e.preventDefault();box.classList.add('dragover')});
+  box.addEventListener('dragleave',()=>box.classList.remove('dragover'));
+  box.addEventListener('drop',e=>{e.preventDefault();box.classList.remove('dragover');handler(e.dataTransfer?.files)});
+}
+function openDB(){return new Promise((res,rej)=>{if(!('indexedDB'in window))return res(null);const req=indexedDB.open('ginp-frame-studio',2);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains('templates'))req.result.createObjectStore('templates',{keyPath:'id'})};req.onsuccess=()=>res(req.result);req.onerror=()=>rej(req.error)})}
+function dbPut(f){return new Promise((res,rej)=>{if(!state.db)return res();const t=state.db.transaction('templates','readwrite');t.objectStore('templates').put(f);t.oncomplete=res;t.onerror=()=>rej(t.error)})}
+function dbDelete(id){return new Promise((res,rej)=>{if(!state.db)return res();const t=state.db.transaction('templates','readwrite');t.objectStore('templates').delete(id);t.oncomplete=res;t.onerror=()=>rej(t.error)})}
+function dbAll(){return new Promise((res,rej)=>{if(!state.db)return res([]);const r=state.db.transaction('templates','readonly').objectStore('templates').getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>rej(r.error)})}
+bindDrop('photoDrop','photoInput',onPhotos);bindDrop('frameDrop','frameInput',onFrame);
+$('removePhoto').onclick=()=>{clearPhotos();toast('تمام عکس‌ها حذف شدند')};
+document.querySelectorAll('[data-layout]').forEach(b=>b.onclick=()=>setComposition(b.dataset.layout));
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+$('gap').oninput=e=>{state.gap=Number(e.target.value);$('gapLabel').textContent=String(state.gap).replace('.', '٫')+'٪';schedule()};
+$('applySize').onclick=()=>{try{state.custom=safeSize(Number($('manualWidth').value),Number($('manualHeight').value));setMode('custom');toast('اندازه دلخواه اعمال شد')}catch(e){toast(e.message)}};
+$('manualWidth').onkeydown=$('manualHeight').onkeydown=e=>{if(e.key==='Enter')$('applySize').click()};
+$('thickness').oninput=e=>{state.thickness=Number(e.target.value);$('thicknessLabel').textContent=String(state.thickness).replace('.', '٫')+'٪';schedule()};
+function fit(mode){state.fit=mode;$('fitContain').classList.toggle('active',mode==='contain');$('fitCover').classList.toggle('active',mode==='cover');schedule()}
+$('fitContain').onclick=()=>fit('contain');$('fitCover').onclick=()=>fit('cover');
+$('reset').onclick=()=>{state.thickness=4.5;$('thickness').value=4.5;$('thicknessLabel').textContent='۴٫۵٪';state.gap=1.5;$('gap').value=1.5;$('gapLabel').textContent='۱٫۵٪';state.frameId='adaptive';setComposition('auto');fit('contain');setMode('auto');renderFrames();toast('تنظیمات بازنشانی شد')};
+$('download').onclick=()=>{if(!state.photos.length){toast('ابتدا چند عکس انتخاب کنید');return}const spec=collageSpec(),geo=geometry(spec),c=document.createElement('canvas');
+  try{paint(c,geo,spec)}catch(e){console.error(e);toast('خطای ساخت خروجی: '+e.message);return}
+  c.toBlob(blob=>{if(!blob){toast('ساخت PNG موفق نبود');return}const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`GINP-Collage-${state.photos.length}-${geo.W}x${geo.H}.png`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),12000);toast('خروجی PNG ساخته شد')},'image/png');
+};
+(async()=>{try{await prepareFrame(mainFrame)}catch(e){console.error(e);toast('تصویر قاب اصلی موجود نیست؛ پوشه assets را بررسی کنید');state.frameId='none'}
+  try{state.db=await openDB();const entries=await dbAll();for(const f of entries){try{f.preview=URL.createObjectURL(f.blob);await prepareFrame(f);state.frames.splice(state.frames.length-1,0,f)}catch(e){console.warn('invalid saved frame',e)}}}catch(e){console.warn('IndexedDB unavailable',e)}
+  renderFrames();renderPhotos();schedule();loadExtras();
+})();
+})();
+
+</script>
+</body>
+</html>
